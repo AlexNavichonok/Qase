@@ -13,6 +13,6 @@ public class LoginTest extends tests.BaseTest {
     @Test(description = "Check that user isn't logged in with invalid credentials")
     public void userShouldNotLogin() {
         loginSteps
-                .login("a@a.a", password, "These credentials do not match our records.");
+                .login("ksandrnav@gmail.com", password, "These credentials do not match our records.");
     }
 }
