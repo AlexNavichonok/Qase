@@ -10,9 +10,9 @@ public class BaseAdapter {
                 header("Content-Type", "application/json").
                 header("Token", "ff3acde1d3492edc0622524f4d47ae08c9d40cfa").
                 body(body).
-                when().
+        when().
                 post(BASE_URL + uri).
-                then().
+        then().
                 log().all().
                 statusCode(expectedStatusCode);
     }
@@ -21,11 +21,11 @@ public class BaseAdapter {
         given().
                 header("Content-Type", "application/json").
                 header("Token", "ff3acde1d3492edc0622524f4d47ae08c9d40cfa").
-                when().
+        when().
                 delete(BASE_URL + code).
-                then().
+        then().
                 log().all().
-                statusCode(200);
+                statusCode(422);
     }
 
     public String get(String uri) {
@@ -33,11 +33,11 @@ public class BaseAdapter {
                 given().
                         header("Content-Type", "application/json").
                         header("Token", "ff3acde1d3492edc0622524f4d47ae08c9d40cfa").
-                        when().
+                when().
                         get(BASE_URL + uri).
-                        then().
+                then().
                         log().all().
-                        statusCode(200).
+                        statusCode(422).
                         extract().body().asString();
         return body;
     }
